@@ -32,7 +32,8 @@ def function(n):
  lambda只是一个表达式，函数体比def简单很多。
  lambda的主体是一个表达式，而不是一个代码块。仅仅能在lambda表达式中封装有限的逻辑进去。
  lambda表达式是起到一个函数速写的作用。允许在代码内嵌入一个函数的定义。
- lambda(x,y:x*y,range(1,n+1))#x,y为参，x*y为表达式，range(1,n+1)表示x,y遵循的规则
+ lambda(x,y:x*y,range(1,n+1))#x,y为参，x*y为表达式，range(1,n+1)表示x,y遵循的规则,参数无需加括号
+
 
 
 
