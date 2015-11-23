@@ -1,0 +1,44 @@
+第一种方式：
+def function(n):
+	result=n
+	for i in range(1,n):
+		result*=i#返回n*(n-1)*(n-2)*···*1
+return result
+第二种方式：
+def function(n):
+	if n==1:
+		return 1#基本返回值
+	else:
+		return n*function(n-1)#乘法递归
+第三种方式:#用python的reduce方法
+   def function(n):
+       return reduce(lambda x,y: x*y, range(1,n+1))
+	funtion(5)结果均返回120
+	
+	
+关于reduce的介绍：
+	 python中的reduce内建函数是一个二元操作函数，他用来将一个数据集合（链表，元组等）中的所有数据进行下列操作：用传给
+	 reduce中的函数()（必须是一个二元操作函数）先对集合中的第1，2个数据进行操作，得到的结果再与第三个数据用func()函数
+	 运算，最后得到一个结果。
+如：
+    def myadd(x,y):  
+        return x+y  
+    sum=reduce(myadd,(1,2,3,4,5,6,7))  
+    print sum  
+  在python 3.0.0.0以后, reduce已经不在built-in function里了, 要用它就得from functools import reduce
+
+
+关于lambda的介绍：
+ lambda只是一个表达式，函数体比def简单很多。
+ lambda的主体是一个表达式，而不是一个代码块。仅仅能在lambda表达式中封装有限的逻辑进去。
+ lambda表达式是起到一个函数速写的作用。允许在代码内嵌入一个函数的定义。
+ lambda(x,y:x*y,range(1,n+1))#x,y为参，x*y为表达式，range(1,n+1)表示x,y遵循的规则
+
+
+
+
+
+
+
+    
+  
