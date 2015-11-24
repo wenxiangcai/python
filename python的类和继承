@@ -17,4 +17,25 @@ class Talker:#定义Talker
 
 class talkingcalculator(Calculator,Talker):#定义talkingcalculator为Caluculator和Talker的子类
     pass
-    
+--------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------- 
+--------------------------------------------------------------------------------------------------------------------
+构造以及子类构造的继承：
+class Bird:#父类
+    def __init__(self):
+        self.hungry=True
+    def eat(self):
+        if self.hungry:
+            print "Aaaaah..."
+            self.hungry=False
+        else:
+            print "No,,thanks"
+
+class SongBird(Bird):#子类继承bird父类
+    def __init__(self):
+        Bird.__init__(self)#调用未绑定的超类构造方法
+        #super(SongBird,self).__init__()#新式类的调用父类构造方法
+        self.sound='Squak!'
+    def sing(self):
+        print self.sound
+        
