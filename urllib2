@@ -1,0 +1,49 @@
+#Get方式传送data数据
+import urllib2    
+import urllib  
+data = {} 
+data['name'] = 'xxxxxxx@qq.com'    
+data['password'] = 'xxxxxxx'    
+url_values = urllib.urlencode(data)    
+print url_values  
+#打印出的结果为:  password=xxxxxxx&name=xxxxxxx%40qq.com
+url = "http://passport.csdn.net/account/login"
+geturl = url + "?"+url_values
+print geturl
+#打印出的结果为:http://passport.csdn.net/account/login?password=xxxxxxx&name=xxxxxxx%40qq.com
+这样就构造了一个get请求的网页
+response=urllib2.urlopen(geturl)
+html = response.read()  
+print html  #这样就将网页的html源代码获取了
+
+
+#post方式传输data数据
+import urllib    
+import urllib2    
+url = 'http://www.someserver.com/register.cgi'    
+values = {'name' : 'WHY',    
+          'location' : 'SDU',    
+          'language' : 'Python' }    
+data = urllib.urlencode(values) # 编码工作  
+req = urllib2.Request(url, data)  # 发送请求同时传data表单  
+response = urllib2.urlopen(req)  #接受反馈的信息  
+the_page = response.read()  #读取反馈的内容 
+
+#改数据头，将headers中的User—Agent换成ie头
+import urllib    
+import urllib2    
+url = 'http://www.someserver.com/cgi-bin/register.cgi'  
+user_agent = 'Mozilla/4.0 (compatible; MSIE 5.5; Windows NT)'    
+values = {'name' : 'WHY',    
+          'location' : 'SDU',    
+          'language' : 'Python' }    
+headers = { 'User-Agent' : user_agent }    
+data = urllib.urlencode(values)    
+req = urllib2.Request(url, data, headers)    
+response = urllib2.urlopen(req)    
+the_page = response.read()  
+
+
+
+
+
