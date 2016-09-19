@@ -1,0 +1,24 @@
+{% extends "admin.html" %}
+
+{% block content %}
+<div class="whois_reverse_result">
+<table class="table table-hover table-bordered">
+   <thead>
+     <tr>
+       <th>域名</th><th>注册人</th><th>邮箱</th>
+     </tr>
+   </thead>
+   <tbody>
+   {% for reverse in reverses[:-2] %}
+   	<tr>
+   {% for item in reverse %}
+   	<td>
+   		{{item}}
+   	</td>
+   	{% endfor %}
+   	</tr>
+   	{% endfor %}
+   </tbody>
+</table>
+</div>
+{% endblock %}
