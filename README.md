@@ -6,3 +6,4 @@ getwifi:get wifipass you have saved in your windows
 
 httpscan:get http banner by things in request packet
 
+webscan:use Single-Threaded to test if the website has sensitive documents
