@@ -1,0 +1,53 @@
+{% extends "admin.html" %}
+
+{% block content %}
+<div class="whois_result">
+<table class="table table-hover table-bordered">
+   <thead>
+     <tr>
+       <th>注册人</th><th>邮箱</th><th>电话</th><th>DNS信息</th><th>来源</th>
+     </tr>
+   </thead>
+   <tbody>
+   	<tr>
+   {% for item in reverses[-1][:3] %}
+   	<td>
+   		{{item}}
+   	</td>
+   	{% endfor %}
+   	<td>{% for item in reverses[-1][3] %}{{item}}{% endfor %}</td>
+   	<td>{{reverses[-1][4]}}</td>
+   	</tr>
+	<tr>
+   {% for item in reverses[-2][:3] %}
+   	<td>
+   		{{item}}
+   	</td>
+   	{% endfor %}
+   	<td>{% for item in reverses[-2][3] %}{{item}}{% endfor %}</td>
+   	<td>{{reverses[-2][4]}}</td>
+   	</tr>
+   </tbody>
+</table>
+</div>
+<div class="whois_reverse_result">
+<table class="table table-hover table-bordered">
+   <thead>
+     <tr>
+       <th>域名</th><th>注册人</th><th>邮箱</th>
+     </tr>
+   </thead>
+   <tbody>
+   {% for reverse in reverses[:-2] %}
+   	<tr>
+   {% for item in reverse %}
+   	<td>
+   		{{item}}
+   	</td>
+   	{% endfor %}
+   	</tr>
+   	{% endfor %}
+   </tbody>
+</table>
+</div>
+{% endblock %}

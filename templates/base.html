@@ -1,0 +1,11 @@
+{% extends "index.html" %}
+{% block content %}
+<div class="alert alert-danger alert-dismissable" role="alert">
+	<button class="close" type="button" data-dismiss="alert">&times;</button>
+	{% if data=="pass_error" %}
+	用户名或密码错误，请重新输入
+	{% elif data=="not_legitimate" %}
+	请输入用户名或密码
+	{% endif %}
+</div>
+{% endblock %}
