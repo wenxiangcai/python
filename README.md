@@ -9,3 +9,5 @@ httpscan:get http banner by things in request packet
 webscan:use Single-Threaded to test if the website has sensitive documents
 
 getoipinfo:use baidumap api to get ip info
+
+portscan:use tcp to test which scan opened
