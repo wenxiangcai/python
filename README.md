@@ -11,3 +11,5 @@ webscan:use Single-Threaded to test if the website has sensitive documents
 getoipinfo:use baidumap api to get ip info
 
 portscan:use tcp to test which scan opened
+
+Mzitu:catch mm's photo to our computer
