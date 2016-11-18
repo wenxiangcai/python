@@ -58,8 +58,6 @@ class Spider(object):
             img_num=img_queue.get()
             image_url="http://mzitu.com/{}/".format(img_num)
             self.visit_realimgurl(image_url,self._imagepage)
-        else:
-            break
 
     def visit_realimgurl(self,image_url,page):
         #队列非空，取出元素
